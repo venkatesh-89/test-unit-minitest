@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require 'tmpdir'
 require_relative '../ruby/envutil'
 
-class RakeIntegration < MiniTest::Unit::TestCase
+class RakeIntegration < MiniTest::TestCase
   include Test::Unit::Assertions
   RAKE_LOADER = File.expand_path(
     File.join(

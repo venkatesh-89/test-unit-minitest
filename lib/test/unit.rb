@@ -222,7 +222,7 @@ module Test
 
       def non_options(files, options)
         if options.delete(:gc_stress)
-          MiniTest::Unit::TestCase.class_eval do
+          MiniTest::TestCase.class_eval do
             oldrun = instance_method(:run)
             define_method(:run) do |runner|
               begin
@@ -861,7 +861,7 @@ module MiniTest # :nodoc: all
   end
 end
 
-class MiniTest::Unit::TestCase # :nodoc: all
+class MiniTest::TestCase # :nodoc: all
   undef run_test
   RUN_TEST_TRACE = "#{__FILE__}:#{__LINE__+3}:in `run_test'".freeze
   def run_test(name)
